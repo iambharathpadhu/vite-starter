@@ -1,6 +1,6 @@
 button {
-    background-color: red;
-    &:hover {
-      background-color: blanchedalmond;
-    }
+  background-color: red;
+  &:hover {
+    background-color: blanchedalmond;
+  }
 }
