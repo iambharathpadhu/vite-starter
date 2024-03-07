@@ -1,9 +1,12 @@
-import { addBanner } from './banner';
+import { count as countClass } from './counter.module.css';
+import './sassy.scss';
 
 export const initializeCounter = (doc = globalThis.document) => {
   const countElement = doc.getElementById('count');
   const incrementButton = doc.getElementById('increment');
   const decrementButton = doc.getElementById('decrement');
+
+  countElement.classList.add(countClass);
 
   let count = 0;
 
@@ -11,7 +14,7 @@ export const initializeCounter = (doc = globalThis.document) => {
     countElement.textContent = count;
 
     if (count < 0) {
-      addBanner('hello');
+      import('./banner').then(({ addBanner }) => addBanner('Less than zero !'));
     }
   };
 
