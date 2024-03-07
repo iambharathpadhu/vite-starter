@@ -1,3 +1,5 @@
+import { addBanner } from './banner';
+
 export const initializeCounter = (doc = globalThis.document) => {
   const countElement = doc.getElementById('count');
   const incrementButton = doc.getElementById('increment');
@@ -7,6 +9,10 @@ export const initializeCounter = (doc = globalThis.document) => {
 
   const render = () => {
     countElement.textContent = count;
+
+    if (count < 0) {
+      addBanner('hello');
+    }
   };
 
   const increment = () => {
